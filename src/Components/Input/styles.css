@@ -1,0 +1,7 @@
+input:focus {
+  border-bottom: solid 2px #6c9c50 !important;
+}
+
+input:focus + label {
+  color: #6c9c50;
+}

@@ -1,4 +1,5 @@
 import { HTMLProps } from "react"
+import './styles.css'
 
 type ComponentProps = HTMLProps<HTMLDivElement> & {
     labelTitle: string
@@ -6,7 +7,7 @@ type ComponentProps = HTMLProps<HTMLDivElement> & {
 
 export const InputComponent = ({ labelTitle, ...props }: ComponentProps) => {
     return (
-        <div {...props} className={`relative z-0 ${props.className}`}>
+        <div {...props} className={`${props.className} relative z-0`}>
             <input type="text"
                 id="floating_standard"
                 className="block 
@@ -20,11 +21,9 @@ export const InputComponent = ({ labelTitle, ...props }: ComponentProps) => {
               border-b-2 
               border-black 
               appearance-none
-              focus:outline-none
               focus:ring-0
-              focus:border-black 
               peer"
-                placeholder=""
+                placeholder=" "
             />
             <label htmlFor="floating_standard"
                 className="absolute 

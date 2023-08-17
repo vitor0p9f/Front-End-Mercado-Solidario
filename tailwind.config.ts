@@ -13,12 +13,15 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+      }
     },
     screens: {
       'smartphone': '430',
       'tablet': '744',
       'laptop': '1280',
+    },
+    colors: {
+      'HighLight': '#6C9C50'
     }
   },
   plugins: [require("flowbite/plugin")],

@@ -21,7 +21,8 @@ const config: Config = {
       'laptop': '1280',
     },
     colors: {
-      'HighLight': '#6C9C50'
+      'HighLight': '#6C9C50',
+      'Hover': '#54793E'
     }
   },
   plugins: [require("flowbite/plugin")],

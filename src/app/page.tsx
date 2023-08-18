@@ -1,3 +1,4 @@
+import { ralewayBold, ralewaySemiBold } from "@/Assets/Fonts";
 import { InputComponent } from "@/Components/Input";
 
 export default function Home() {
@@ -19,31 +20,39 @@ export default function Home() {
         flex
         flex-col 
         items-center 
-        justify-center mt-16"
+        justify-center
+        mt-16
+        w-[24.875rem]
+        "
       >
-        <h2 className="text-black 
-        text-2xl"
+        <h2 className={`${ralewayBold.className} text-black 
+        text-2xl `}
         >
           Faça login na nossa plataforma
         </h2>
 
         <div data-element-name="Fields container"
           className="mt-10 w-full">
+          <InputComponent labelName="E-mail" inputType="email" />
 
-          <InputComponent labelTitle="E-mail" />
-
-          <InputComponent labelTitle="Senha" className="mt-8" />
+          <InputComponent labelName="Senha" divStyle="mt-10" inputType="password" />
         </div>
 
-        <button className="py-2 
-          text-black mt-10 w-[14.313rem] 
+        <button className={`
+          ${ralewaySemiBold.className}
+          py-2 
+          text-black 
+          mt-10 
+          w-[14.313rem] 
           bg-HighLight
           rounded-md
-          text-xl"
+          text-xl
+          hover:bg-Hover
+        `}
         >
           Entrar
         </button>
       </form>
-    </div>
+    </div >
   )
 }

@@ -1,49 +1,34 @@
-import { HTMLProps } from "react"
+import { HTMLInputTypeAttribute, StyleHTMLAttributes } from "react"
 import './styles.css'
 
-type ComponentProps = HTMLProps<HTMLDivElement> & {
-    labelTitle: string
+type ComponentProps = {
+    labelName: string
+    inputType: HTMLInputTypeAttribute
+    fieldStyle?: StyleHTMLAttributes<HTMLInputElement>
+    labelStyle?: React.CSSProperties
+    divStyle?: string
+    inputRequired?: boolean
 }
 
-export const InputComponent = ({ labelTitle, ...props }: ComponentProps) => {
+export const InputComponent = ({ labelName, inputType, divStyle, inputRequired }: ComponentProps) => {
     return (
-        <div {...props} className={`${props.className} relative z-0`}>
-            <input type="text"
-                id="floating_standard"
-                className="block 
-              pt-4
-              px-0
-              w-full 
-              text-sm 
-              text-gray-900 
-              bg-transparent 
-              border-0 
-              border-b-2 
-              border-black 
-              appearance-none
-              focus:ring-0
-              peer"
+        <div className={`${divStyle} relative`}>
+            <input
+                id={labelName}
+                type={inputType}
+                className="
+                    text-gray-800
+                    border-0
+                    border-b-2
+                    w-full
+                "
                 placeholder=" "
+                required={inputRequired}
             />
-            <label htmlFor="floating_standard"
-                className="absolute 
-              text-lg 
-              text-black  
-              duration-300 
-              transform 
-              -translate-y-6 
-              scale-75 
-              top-3 
-              -z-10 
-              origin-[0] 
-              peer-focus:left-0   
-              peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
-              peer-focus:scale-75 
-              peer-focus:-translate-y-6
-              peer-focus:text-black"
-            >
-                {labelTitle}
-            </label>
+            <label
+                htmlFor={labelName}
+                className="absolute left-0 text-lg text-black"
+            >{labelName}</label>
         </div>
     )
 }

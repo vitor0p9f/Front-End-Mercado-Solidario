@@ -40,6 +40,8 @@ export const Label = styled.label`
   -moz-transition: all 0.3s ease-out;
   left: 0;
   margin-top: 0rem;
+  font-family: ${({ theme }) => theme.fonts.raleway.fontFamily};
+  font-weight: ${({ theme }) => theme.fonts.raleway.semiBold};
 
   ${InputElement}:focus ~ &,${InputElement}:not(:placeholder-shown) ~ &{
     color: ${({ theme }) => theme.colors.highlight};

@@ -1,14 +1,17 @@
+import { HTMLInputTypeAttribute } from "react";
 import { InputContainer, InputElement, Label } from './styles';
 
 type ComponentProps = {
     labelTitle: string;
+    $marginTop?: number;
+    type: HTMLInputTypeAttribute
 };
 
-export const InputComponent = ({ labelTitle, ...props }: ComponentProps) => {
+export const InputComponent = ({ labelTitle, $marginTop, type }: ComponentProps) => {
     return (
-        <InputContainer {...props}>
+        <InputContainer $marginTop={$marginTop}>
             <InputElement
-                type="text"
+                type={type}
                 id="floating_standard"
                 placeholder=""
             />

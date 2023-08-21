@@ -1,6 +1,5 @@
-import React from 'react';
-import {InputComponent} from '../../Components/Input';
-import { Container, Logo, Form, Title, FieldsContainer, Button } from './styles';
+import { InputComponent } from '../../Components/Input';
+import { Button, Container, FieldsContainer, Form, Logo, Title } from './styles';
 
 export function Login() {
   return (
@@ -11,9 +10,9 @@ export function Login() {
         <Title>Faça login na nossa plataforma</Title>
 
         <FieldsContainer>
-          <InputComponent labelTitle="E-mail" />
+          <InputComponent labelTitle="E-mail" type="email" />
 
-          <InputComponent labelTitle="Senha" />
+          <InputComponent labelTitle="Senha" type="password" $marginTop={2.5} />
         </FieldsContainer>
 
         <Button>Entrar</Button>

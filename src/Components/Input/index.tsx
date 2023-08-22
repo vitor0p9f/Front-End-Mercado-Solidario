@@ -1,14 +1,19 @@
+import { SignInFormInputs } from "@/pages/Login";
 import { HTMLInputTypeAttribute } from "react";
+import { Path, RegisterOptions, UseFormRegister } from "react-hook-form";
 import { InputContainer, InputElement, Label, Span } from './styles';
 
 type ComponentProps = {
-    labelTitle: string;
-    $marginTop?: number;
+    labelTitle: string
+    $marginTop?: number
     type: HTMLInputTypeAttribute
     errorMessage: string | undefined
+    RHFLabel: Path<SignInFormInputs>;
+    register: UseFormRegister<SignInFormInputs>;
+    registerOptions: RegisterOptions<SignInFormInputs>;
 };
 
-export const InputComponent = ({ labelTitle, $marginTop, type, errorMessage }: ComponentProps) => {
+export const InputComponent = ({ RHFLabel, errorMessage, labelTitle, register, registerOptions, type, $marginTop }: ComponentProps) => {
     return (
         <>
             <InputContainer $marginTop={$marginTop}>
@@ -16,6 +21,7 @@ export const InputComponent = ({ labelTitle, $marginTop, type, errorMessage }: C
                     type={type}
                     id="floating_standard"
                     placeholder=""
+                    {...register(RHFLabel, registerOptions)}
                 />
                 <Label
                     htmlFor="floating_standard"
@@ -26,4 +32,4 @@ export const InputComponent = ({ labelTitle, $marginTop, type, errorMessage }: C
             {errorMessage && <Span>{errorMessage}</Span>}
         </>
     )
-};
+}

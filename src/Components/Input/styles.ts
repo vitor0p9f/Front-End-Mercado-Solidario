@@ -57,4 +57,6 @@ export const Label = styled.label`
 export const Span = styled.span`
   align-self: self-start;
   margin-top: 0.1rem;
+  color: red;
+  font-size: 0.8rem;
 `;

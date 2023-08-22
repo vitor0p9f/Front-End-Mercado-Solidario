@@ -47,8 +47,8 @@ export const Button = styled.button`
   margin-top: 2.5rem;
   cursor: pointer;
   width: 14.313rem;
-  font-family: ${({theme})=> theme.fonts.raleway.fontFamily};
-  font-weight: ${({theme})=> theme.fonts.raleway.semiBold};
+  font-family: ${({ theme }) => theme.fonts.raleway.fontFamily};
+  font-weight: ${({ theme }) => theme.fonts.raleway.semiBold};
 
   &:hover, &:active{
     background-color: ${props => props.theme.colors.hover};

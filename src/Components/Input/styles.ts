@@ -45,11 +45,16 @@ export const Label = styled.label`
 
   ${InputElement}:focus ~ &,${InputElement}:not(:placeholder-shown) ~ &{
     color: ${({ theme }) => theme.colors.highlight};
-    margin-top: -1.4rem;
+    margin-top: -1.1rem;
     font-size: 1rem;
   }
 
   ${InputElement}:not(:placeholder-shown) ~ &{
     color: ${({ theme }) => theme.colors.black};
   }
+`;
+
+export const Span = styled.span`
+  align-self: self-start;
+  margin-top: 0.1rem;
 `;

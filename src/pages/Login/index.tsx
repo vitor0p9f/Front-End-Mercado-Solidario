@@ -20,14 +20,14 @@ export default function Login() {
     register,
     handleSubmit,
     formState: { errors, isValid },
-  } = useForm<SignInFormInputs>({ mode: 'onChange' });
+  } = useForm<SignInFormInputs>({ mode: "onChange" });
 
   const defaultRegisterOptions: RegisterOptions = {
     required: {
       value: true,
-      message: "Por favor preencha este campo."
-    }
-  }
+      message: "Por favor preencha este campo.",
+    },
+  };
 
   return (
     <Container>
@@ -48,12 +48,12 @@ export default function Login() {
             registerOptions={{
               required: {
                 value: true,
-                message: "Por favor preencha este campo."
+                message: "Por favor preencha este campo.",
               },
               pattern: {
                 value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
-                message: "invalid email address"
-              }
+                message: "Este endereço de e-mail é inválido!",
+              },
             }}
             errorMessage={errors.Email?.message}
           />

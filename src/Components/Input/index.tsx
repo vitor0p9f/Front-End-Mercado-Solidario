@@ -11,6 +11,8 @@ type ComponentProps = {
   RHFLabel: Path<SignInFormInputs>;
   register: UseFormRegister<SignInFormInputs>;
   registerOptions: RegisterOptions<SignInFormInputs>;
+  inputTestId?: string
+  labelTestId?: string
 };
 
 export const InputComponent = ({
@@ -21,6 +23,8 @@ export const InputComponent = ({
   registerOptions,
   type,
   $marginTop,
+  inputTestId,
+  labelTestId
 }: ComponentProps) => {
   return (
     <>
@@ -31,8 +35,9 @@ export const InputComponent = ({
           placeholder=""
           {...register(RHFLabel, registerOptions)}
           $hasError={Boolean(errorMessage)}
+          data-testid={inputTestId}
         />
-        <Label htmlFor="floating_standard" $hasError={Boolean(errorMessage)}>
+        <Label htmlFor="floating_standard" $hasError={Boolean(errorMessage)} data-testid={labelTestId}>
           {labelTitle}
         </Label>
       </InputContainer>

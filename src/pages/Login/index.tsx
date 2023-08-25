@@ -56,6 +56,8 @@ export default function Login() {
               },
             }}
             errorMessage={errors.Email?.message}
+            inputTestId="E-mail-input"
+            labelTestId="E-mail-label"
           />
 
           <InputComponent

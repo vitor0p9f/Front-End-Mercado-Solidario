@@ -58,6 +58,7 @@ export default function Login() {
             errorMessage={errors.Email?.message}
             inputTestId="E-mail-input"
             labelTestId="E-mail-label"
+            spanTestId="E-mail-span"
           />
 
           <InputComponent
@@ -68,6 +69,8 @@ export default function Login() {
             register={register}
             registerOptions={defaultRegisterOptions}
             errorMessage={errors.Password?.message}
+            inputTestId="Password-input"
+            spanTestId="Password-span"
           />
         </FieldsContainer>
 

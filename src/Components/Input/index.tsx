@@ -13,6 +13,7 @@ type ComponentProps = {
   registerOptions: RegisterOptions<SignInFormInputs>;
   inputTestId?: string
   labelTestId?: string
+  spanTestId?: string
 };
 
 export const InputComponent = ({
@@ -24,7 +25,8 @@ export const InputComponent = ({
   type,
   $marginTop,
   inputTestId,
-  labelTestId
+  labelTestId,
+  spanTestId
 }: ComponentProps) => {
   return (
     <>
@@ -41,7 +43,7 @@ export const InputComponent = ({
           {labelTitle}
         </Label>
       </InputContainer>
-      {errorMessage && <Span>{errorMessage}</Span>}
+      {errorMessage && <Span data-testid={spanTestId}>{errorMessage}</Span>}
     </>
   );
 };

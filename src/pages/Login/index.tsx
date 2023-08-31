@@ -61,7 +61,7 @@ export default function Login() {
           <InputComponent
             labelTitle="Senha"
             type="password"
-            $marginTop={2.5}
+            $marginTop={2}
             RHFLabel="Password"
             register={register}
             registerOptions={defaultRegisterOptions}

@@ -1,21 +1,21 @@
-import { Lato, Raleway } from 'next/font/google'
+import { Lato, Raleway } from "next/font/google";
 
 export const ralewayBold = Raleway({
-    subsets: ['latin'],
-    weight: '700'
-})
+  subsets: ["latin"],
+  weight: "700",
+});
 
 export const ralewaySemiBold = Raleway({
-    subsets: ['latin'],
-    weight: '600'
-})
+  subsets: ["latin"],
+  weight: "600",
+});
 
 export const ralewayMedium = Raleway({
-    subsets: ['latin'],
-    weight: '500'
-})
+  subsets: ["latin"],
+  weight: "500",
+});
 
-export const latoLight = Lato({
-    weight: '300',
-    subsets: ['latin']
-})
+export const latoRegular = Lato({
+  weight: "400",
+  subsets: ["latin"],
+});

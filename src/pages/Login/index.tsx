@@ -1,11 +1,11 @@
 "use client";
+import { Logo } from "@/Components/Logo";
+import { PageContainer } from "@/styles/global";
 import {
   Button,
-  Container,
   FieldsContainer,
   Form,
-  Logo,
-  Title,
+  Title
 } from "@/styles/pages/Login";
 import { RegisterOptions, useForm } from "react-hook-form";
 import { InputComponent } from "../../Components/Input";
@@ -30,11 +30,8 @@ export default function Login() {
   };
 
   return (
-    <Container>
-      <Logo
-        src="images/icons/icon-512x512.png"
-        alt="A logo do projeto. Três pairs de mãos de pessoas com diferentes etnias, sobre um fundo verde, segurando uma moeda dourada com o símbolo do cifrão."
-      />
+    <PageContainer>
+      <Logo size={7} />
 
       <Form onSubmit={handleSubmit(() => console.log(isValid))}>
         <Title>Faça login na nossa plataforma</Title>
@@ -76,6 +73,6 @@ export default function Login() {
 
         <Button>Entrar</Button>
       </Form>
-    </Container>
+    </PageContainer>
   );
 }

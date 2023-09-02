@@ -1,30 +1,78 @@
-import React from 'react';
-import { ThemeProvider } from "styled-components";
-import {GlobalStyle } from "../../styles/global"
-import {InputComponent} from '../../Components/Input';
-import { defaultTheme } from '../../styles/themes/default'
-import { Container, Logo, Form, Title, FieldsContainer, Button } from './styles';
+"use client";
+import { Logo } from "@/Components/Logo";
+import { PageContainer } from "@/styles/global";
+import {
+  Button,
+  FieldsContainer,
+  Form,
+  Title
+} from "@/styles/pages/Login";
+import { RegisterOptions, useForm } from "react-hook-form";
+import { InputComponent } from "../../Components/Input";
+
+export type SignInFormInputs = {
+  Email: string;
+  Password: string;
+};
 
 export default function Login() {
-  return (
-    <ThemeProvider theme={defaultTheme}>
-    <GlobalStyle />
-    <Container>
-      <Logo src="images/icons/icon-512x512.png" alt="A logo do projeto. Três pares de mãos de pessoas com diferentes etnias, sobre um fundo verde, segurando uma moeda dourada com o símbolo do cifrão." />
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm<SignInFormInputs>({ mode: "onChange" });
 
-      <Form>
+  const defaultRegisterOptions: RegisterOptions = {
+    required: {
+      value: true,
+      message: "Por favor preencha este campo.",
+    },
+  };
+
+  return (
+    <PageContainer>
+      <Logo size={7} />
+
+      <Form onSubmit={handleSubmit(() => console.log(isValid))}>
         <Title>Faça login na nossa plataforma</Title>
 
         <FieldsContainer>
-          <InputComponent labelTitle="E-mail" />
+          <InputComponent
+            labelTitle="E-mail"
+            type="email"
+            RHFLabel="Email"
+            register={register}
+            registerOptions={{
+              required: {
+                value: true,
+                message: "Por favor preencha este campo.",
+              },
+              pattern: {
+                value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+                message: "Este endereço de e-mail é inválido!",
+              },
+            }}
+            errorMessage={errors.Email?.message}
+            inputTestId="E-mail-input"
+            labelTestId="E-mail-label"
+            spanTestId="E-mail-span"
+          />
 
-          <InputComponent labelTitle="Senha" />
+          <InputComponent
+            labelTitle="Senha"
+            type="password"
+            $marginTop={2.5}
+            RHFLabel="Password"
+            register={register}
+            registerOptions={defaultRegisterOptions}
+            errorMessage={errors.Password?.message}
+            inputTestId="Password-input"
+            spanTestId="Password-span"
+          />
         </FieldsContainer>
 
         <Button>Entrar</Button>
       </Form>
-    </Container>
-  </ThemeProvider>
-
+    </PageContainer>
   );
 }

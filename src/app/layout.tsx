@@ -1,8 +1,12 @@
+import StyledComponentsRegistry from "@/lib/registry";
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] })
+type ComponentProps = {
+  children: React.ReactNode
+}
 
+const inter = Inter({ subsets: ['latin'] })
 const APP_NAME = "Mercado Solidário";
 const APP_DEFAULT_TITLE = "Mercado Solidário";
 const APP_TITLE_TEMPLATE = "PWA App";
@@ -21,7 +25,6 @@ export const metadata: Metadata = {
     capable: true,
     statusBarStyle: "default",
     title: APP_DEFAULT_TITLE,
-    // startUpImage: [],
   },
   formatDetection: {
     telephone: false,
@@ -45,17 +48,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: ComponentProps) {
   return (
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <StyledComponentsRegistry>
+          {children}
+        </StyledComponentsRegistry>
+      </body>
     </html>
   )
 }

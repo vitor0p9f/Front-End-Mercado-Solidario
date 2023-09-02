@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, styled } from "styled-components";
 
-export const GlobalStyle = createGlobalStyle `
+export const GlobalStyle = createGlobalStyle`
 *{
     margin: 0;
     padding: 0;
@@ -22,4 +22,14 @@ body {
 body, input, textarea, button {
     font: 400, 1rem Roboto, sans-serif;
 }
+`;
+
+export const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: ${props => props.theme.colors.white};
 `;

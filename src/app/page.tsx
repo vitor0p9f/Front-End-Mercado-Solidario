@@ -11,4 +11,4 @@ export default function Home() {
                     <h1> raiz </h1>
     </ThemeProvider>
   )
-}
+}      

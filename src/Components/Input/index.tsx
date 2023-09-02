@@ -1,22 +1,49 @@
-import { InputContainer, InputElement, Label } from './styles';
+import { SignInFormInputs } from "@/pages/Login";
+import { HTMLInputTypeAttribute } from "react";
+import { Path, RegisterOptions, UseFormRegister } from "react-hook-form";
+import { InputContainer, InputElement, Label, Span } from "./styles";
 
 type ComponentProps = {
-    labelTitle: string;
+  labelTitle: string;
+  $marginTop?: number;
+  type: HTMLInputTypeAttribute;
+  errorMessage: string | undefined;
+  RHFLabel: Path<SignInFormInputs>;
+  register: UseFormRegister<SignInFormInputs>;
+  registerOptions: RegisterOptions<SignInFormInputs>;
+  inputTestId?: string
+  labelTestId?: string
+  spanTestId?: string
 };
 
-export const InputComponent = ({ labelTitle, ...props }: ComponentProps) => {
-    return (
-        <InputContainer {...props}>
-            <InputElement
-                type="text"
-                id="floating_standard"
-                placeholder=""
-            />
-            <Label
-                htmlFor="floating_standard"
-            >
-                {labelTitle}
-            </Label>
-        </InputContainer>
-    );
+export const InputComponent = ({
+  RHFLabel,
+  errorMessage,
+  labelTitle,
+  register,
+  registerOptions,
+  type,
+  $marginTop,
+  inputTestId,
+  labelTestId,
+  spanTestId
+}: ComponentProps) => {
+  return (
+    <>
+      <InputContainer $marginTop={$marginTop}>
+        <InputElement
+          type={type}
+          id="floating_standard"
+          placeholder=""
+          {...register(RHFLabel, registerOptions)}
+          $hasError={Boolean(errorMessage)}
+          data-testid={inputTestId}
+        />
+        <Label htmlFor="floating_standard" $hasError={Boolean(errorMessage)} data-testid={labelTestId}>
+          {labelTitle}
+        </Label>
+      </InputContainer>
+      {errorMessage && <Span data-testid={spanTestId}>{errorMessage}</Span>}
+    </>
+  );
 };

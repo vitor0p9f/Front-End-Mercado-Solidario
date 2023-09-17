@@ -37,7 +37,7 @@ export const Title = styled.h1`
 `;
 
 type GroupProps = {
-  itemsQuantity: number
+  $itemsQuantity: number
 }
 
 export const Group = styled.div<GroupProps>`
@@ -49,7 +49,7 @@ export const Group = styled.div<GroupProps>`
     margin-right: 1.25rem;
   }
 
-  ${({ itemsQuantity }) => (itemsQuantity > 2) && css`
+  ${({ $itemsQuantity }) => ($itemsQuantity > 2) && css`
     & > ${InputContainer}:nth-child(2){
       margin-right: 1.25rem;
     }

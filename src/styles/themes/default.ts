@@ -2,6 +2,7 @@ import {
   latoRegular,
   ralewayBold,
   ralewayMedium,
+  ralewayRegular,
   ralewaySemiBold,
 } from "@/Assets/Fonts";
 
@@ -21,6 +22,7 @@ export const defaultTheme = {
       semiBold: `${ralewaySemiBold.style.fontWeight}`,
       bold: `${ralewayBold.style.fontWeight}`,
       medium: `${ralewayMedium.style.fontWeight}`,
+      regular: `${ralewayRegular.style.fontWeight}`,
     },
     lato: {
       fontFamily: `${latoRegular.style.fontFamily}`,

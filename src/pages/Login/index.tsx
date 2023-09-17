@@ -5,6 +5,9 @@ import {
   Button,
   FieldsContainer,
   Form,
+  OptionsContainer,
+  Text,
+  TextContainer,
   Title
 } from "@/styles/pages/Login";
 import { RegisterOptions, useForm } from "react-hook-form";
@@ -73,6 +76,13 @@ export default function Login() {
 
         <Button>Entrar</Button>
       </Form>
+
+      <OptionsContainer $marginTop={2}>
+        <TextContainer>
+          <Text $marginRight={0.25}>Ainda não possui cadastro?</Text>
+          <Text $highlight>Cadastre-se</Text>
+        </TextContainer>
+      </OptionsContainer>
     </PageContainer>
   );
 }

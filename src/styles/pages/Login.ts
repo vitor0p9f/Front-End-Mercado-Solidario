@@ -83,6 +83,7 @@ export const Text = styled.p<TextProps>`
   font-family: ${({ theme }) => theme.fonts.raleway.fontFamily};
   font-weight: ${({ theme }) => theme.fonts.raleway.regular};
   font-size: 0.875rem;
+  text-decoration: none;
 
   ${({ $highlight }) => $highlight && css`
     color: ${({ theme }) => theme.colors.highlight};

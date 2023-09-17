@@ -80,7 +80,7 @@ export default function Login() {
       <OptionsContainer $marginTop={2}>
         <TextContainer>
           <Text $marginRight={0.25}>Ainda não possui cadastro?</Text>
-          <Text $highlight>Cadastre-se</Text>
+          <Text $highlight as="a" href="/Sign-Up">Cadastre-se</Text>
         </TextContainer>
       </OptionsContainer>
     </PageContainer>

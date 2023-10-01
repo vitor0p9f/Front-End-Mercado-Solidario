@@ -1,6 +1,6 @@
 import { HTMLInputTypeAttribute } from "react";
 import { Path, RegisterOptions, UseFormRegister } from "react-hook-form";
-import { InputContainer, InputElement, Label, Span } from "./styles";
+import { InputComponentContainer, InputContainer, InputElement, Label, Span } from "./styles";
 
 type ComponentProps = {
   labelTitle: string;
@@ -29,20 +29,22 @@ export const InputComponent = ({
 }: ComponentProps) => {
   return (
     <>
-      <InputContainer $marginTop={$marginTop}>
-        <InputElement
-          type={type}
-          id="floating_standard"
-          placeholder=""
-          {...register(RHFLabel, registerOptions)}
-          $hasError={Boolean(errorMessage)}
-          data-testid={inputTestId}
-        />
-        <Label htmlFor="floating_standard" $hasError={Boolean(errorMessage)} data-testid={labelTestId}>
-          {labelTitle}
-        </Label>
-      </InputContainer>
-      {errorMessage && <Span data-testid={spanTestId}>{errorMessage}</Span>}
+      <InputComponentContainer>
+        <InputContainer $marginTop={$marginTop}>
+          <InputElement
+            type={type}
+            id="floating_standard"
+            placeholder=""
+            {...register(RHFLabel, registerOptions)}
+            $hasError={Boolean(errorMessage)}
+            data-testid={inputTestId}
+          />
+          <Label htmlFor="floating_standard" $hasError={Boolean(errorMessage)} data-testid={labelTestId}>
+            {labelTitle}
+          </Label>
+        </InputContainer>
+        {errorMessage && <Span data-testid={spanTestId}>{errorMessage}</Span>}
+      </InputComponentContainer>
     </>
   );
 };

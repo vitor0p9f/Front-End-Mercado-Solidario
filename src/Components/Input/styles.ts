@@ -13,6 +13,12 @@ export const InputContainer = styled.div<InputContainerProps>`
   margin-top: ${(props) => props.$marginTop || 0}rem;
 `;
 
+export const InputComponentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
 type InputProps = {
   $hasError: boolean;
 };
@@ -63,7 +69,7 @@ export const Label = styled.label<LabelProps>`
 
   ${InputElement}:not(:placeholder-shown) ~ & {
     color: ${({ theme, $hasError }) =>
-      $hasError ? "red" : theme.colors.black};
+    $hasError ? "red" : theme.colors.black};
   }
 `;
 

@@ -6,6 +6,8 @@ export const Form = styled.form`
   align-items: center;
   justify-content: center;
   margin-top: 4rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 `;
 
 export const Title = styled.h1`

@@ -17,10 +17,14 @@
     "plugins": [
       {
         "name": "next"
+      },
+      {
+        "name": "typescript-styled-plugin"
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "test-utils": ["./src/utils/test-utils.tsx"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

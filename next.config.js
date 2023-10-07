@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
+const nextConfig = {
+  compiler: {
+    styledComponents: true,
+  },
+};
 
 const withPWA = require("@ducanh2912/next-pwa").default({
   dest: "public",
@@ -10,6 +15,4 @@ const withPWA = require("@ducanh2912/next-pwa").default({
 });
 
 // Your Next config is automatically typed!
-module.exports = withPWA({
-  // Your Next.js config
-});
+module.exports = withPWA(nextConfig);

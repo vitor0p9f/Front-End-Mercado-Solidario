@@ -1,12 +1,11 @@
+import { authUser } from "@/utils/functions/authUser"
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import 'jest-styled-components'
 import { render, screen } from 'test-utils'
 import { FormMock } from "../__mocks__/Form"
 
-const mockLogin = jest.fn((email: string, password: string) => {
-    Promise.resolve({ email, password })
-})
+const mockLogin = jest.fn(authUser)
 
 beforeEach(async () => {
     render(<FormMock loginFunction={mockLogin} />)
@@ -75,5 +74,39 @@ describe('Formulário da tela de login', () => {
         })
 
         expect(mockLogin).toBeCalledWith('teste@gmail.com', 'Qualquer_coisa')
+    })
+
+    test('O usuário está sendo autenticado', async () => {
+        await userEvent.type(screen.getByTestId('E-mail-input'), 'teste@gmail.com')
+        await userEvent.type(screen.getByTestId('Password-input'), 'Qualquer_coisa')
+
+        await userEvent.click(screen.getByRole('button'))
+
+        screen.queryAllByRole('span').forEach(span => {
+            expect(span).not.toBeInTheDocument()
+        })
+
+        expect(mockLogin).toBeCalledWith('teste@gmail.com', 'Qualquer_coisa')
+
+        const returnedValue = await mockLogin('teste@gmail.com', 'Qualquer_coisa')
+
+        expect(returnedValue).toBe('Você se autenticou!')
+    })
+
+    test('Houve um erro durante o processo de autenticação', async () => {
+        await userEvent.type(screen.getByTestId('E-mail-input'), 'teste@gmail.com')
+        await userEvent.type(screen.getByTestId('Password-input'), 'Qualquer_coisa')
+
+        await userEvent.click(screen.getByRole('button'))
+
+        screen.queryAllByRole('span').forEach(span => {
+            expect(span).not.toBeInTheDocument()
+        })
+
+        expect(mockLogin).toBeCalledWith('teste@gmail.com', 'Qualquer_coisa')
+
+        const returnedValue = await mockLogin('desconhecido@gmail.com', 'Qualquer_coisa')
+
+        expect(returnedValue).toBe('Parece que ocorreu um erro')
     })
 })

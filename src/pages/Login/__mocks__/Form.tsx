@@ -5,7 +5,7 @@ import { RegisterOptions, useForm } from "react-hook-form"
 import { SignInFormInputs } from ".."
 
 type ComponentProps = {
-    loginFunction: jest.Mock<void, [email: string, password: string], any>
+    loginFunction: jest.Mock<Promise<string>, [email: string, password: string], any>
 }
 
 export const FormMock: React.FC<ComponentProps> = ({ loginFunction }) => {

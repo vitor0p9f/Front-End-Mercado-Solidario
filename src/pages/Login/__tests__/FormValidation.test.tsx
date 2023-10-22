@@ -111,8 +111,6 @@ describe('Tela de login', () => {
         })
 
         test('Houve um erro durante o processo de autenticação', async () => {
-            Cookies.remove('token')
-
             await userEvent.type(screen.getByTestId('E-mail-input'), 'desconhecido@gmail.com')
             await userEvent.type(screen.getByTestId('Password-input'), 'Qualquer_coisa')
 
@@ -123,6 +121,8 @@ describe('Tela de login', () => {
             })
 
             expect(mockLogin).toBeCalledWith('desconhecido@gmail.com', 'Qualquer_coisa')
+
+            Cookies.remove('token')
 
             await mockLogin('desconhecido@gmail.com', 'Qualquer_coisa')
 

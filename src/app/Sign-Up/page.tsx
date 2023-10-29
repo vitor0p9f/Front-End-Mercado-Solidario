@@ -22,6 +22,7 @@ export default function SignUp() {
         register,
         handleSubmit,
         formState: { errors, isValid },
+        watch
     } = useForm<SignUpFormInputs>({ mode: "onChange" });
 
     const defaultRegisterOptions: RegisterOptions = {
@@ -80,9 +81,20 @@ export default function SignUp() {
                         }} />
                     </Group>
 
-                    <InputComponent labelTitle="Senha" type="password" RHFLabel="Password" errorMessage={errors.Password?.message} register={register} registerOptions={{}} $marginTop={2} />
+                    <InputComponent labelTitle="Senha" type="password" RHFLabel="Password" errorMessage={errors.Password?.message} register={register} registerOptions={{
+                        minLength: {
+                            value: 12,
+                            message: "A senha deve ter no mínimo 12 caracteres!"
+                        }
+                    }} $marginTop={2} />
 
-                    <InputComponent labelTitle="Confirmar senha" type="password" RHFLabel="ConfirmPassword" errorMessage={errors.ConfirmPassword?.message} register={register} registerOptions={{}} $marginTop={2} />
+                    <InputComponent labelTitle="Confirmar senha" type="password" RHFLabel="ConfirmPassword" errorMessage={errors.ConfirmPassword?.message} register={register} registerOptions={{
+                        validate: (value) => {
+                            if (watch('Password') != value) {
+                                return "As senhas não são iguais!"
+                            }
+                        }
+                    }} $marginTop={2} />
                 </FieldsContainer>
 
                 <Button>Cadastrar</Button>

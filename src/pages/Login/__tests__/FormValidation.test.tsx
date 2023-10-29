@@ -105,9 +105,9 @@ describe('Tela de login', () => {
 
             await mockLogin('teste@gmail.com', 'Qualquer_coisa')
 
-            const storagedToken = Cookies.get('token');
+            const isAuthenticated = Cookies.get('Authenticated');
 
-            expect(storagedToken).toBe(process.env.TOKEN);
+            expect(isAuthenticated).toBe("true");
         })
 
         test('Houve um erro durante o processo de autenticação', async () => {

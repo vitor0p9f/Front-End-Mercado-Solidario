@@ -24,7 +24,8 @@ export const authUser = async (email: string, password: string) => {
             return
         }
 
-        Cookies.set('token', data.token);
+        api.defaults.headers["Authorization"] = `Bearer ${data.token}`;
+        Cookies.set('Authenticated', "true");
     } catch (error) {
         toast.error('Houve um erro ao tentar processar sua requisição, tente novamente mais tarde!', toastOptions)
     }

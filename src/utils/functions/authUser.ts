@@ -3,7 +3,7 @@ import { api } from "../axios"
 import Cookies from "js-cookie"
 
 const toastOptions: ToastOptions = {
-    position: "bottom-right",
+    position: "bottom-left",
     autoClose: 5000,
     closeOnClick: true,
     draggable: true,

@@ -32,3 +32,15 @@ export const PageContainer = styled.div`
   height: 100vh;
   background-color: ${props => props.theme.colors.white};
 `;
+
+const sizes = {
+  mobile: '430px',
+  tablet: '768px',
+  laptop: '1024px',
+};
+
+export const devices = {
+  mobile: `(min-width: ${sizes.mobile})`,
+  tablet: `(min-width: ${sizes.tablet})`,
+  laptop: `(min-width: ${sizes.laptop})`,
+};

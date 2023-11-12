@@ -127,7 +127,16 @@ export default function SignUp() {
                             spanTestId="Home-number-span"
                             errorMessage={errors.HomeNumber?.message}
                             register={register}
-                            registerOptions={defaultRegisterOptions}
+                            registerOptions={{
+                                required: {
+                                    value: true,
+                                    message: "Por favor preencha este campo.",
+                                },
+                                pattern: {
+                                    value: /^\d+$/,
+                                    message: 'Digite apenas números.'
+                                }
+                            }}
                         />
 
                         <InputComponent
@@ -139,10 +148,13 @@ export default function SignUp() {
                             errorMessage={errors.UF?.message}
                             register={register}
                             registerOptions={{
-                                ...defaultRegisterOptions,
-                                maxLength: {
-                                    value: 2,
-                                    message: "A UF deve ter no máximo 2 caracteres"
+                                required: {
+                                    value: true,
+                                    message: "Por favor preencha este campo.",
+                                },
+                                pattern: {
+                                    value: /^(\s*(AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO)?)$/,
+                                    message: 'A sigla é inválida.'
                                 }
                             }}
                         />

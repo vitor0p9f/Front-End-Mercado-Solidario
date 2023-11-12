@@ -5,10 +5,12 @@ import {
   Button,
   FieldsContainer,
   Form,
-  Title
+  Title,
+  Text
 } from "@/styles/pages/Login";
 import { RegisterOptions, useForm } from "react-hook-form";
 import { InputComponent } from "../../Components/Input";
+import Link from "next/link";
 
 export type SignInFormInputs = {
   Email: string;
@@ -73,6 +75,10 @@ export default function Login() {
 
         <Button>Entrar</Button>
       </Form>
+      <Text $marginTop={2}>Ainda não possui cadastro? <Link href='/Sign-Up' style={{
+        textDecoration: 'none',
+        color: "#54793E"
+      }}>Cadastre-se</Link></Text>
     </PageContainer>
   );
 }

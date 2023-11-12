@@ -40,3 +40,13 @@ export const Button = styled.button`
     background-color: ${props => props.theme.colors.hover};
   }
 `;
+
+type TextProps = {
+  $marginTop?: number;
+};
+export const Text = styled.p<TextProps>`
+  margin-top: ${(props) => props.$marginTop || 0}rem;
+  font-family: ${({ theme }) => theme.fonts.lato.fontFamily};
+  font-weight: ${({ theme }) => theme.fonts.lato.regular};
+  font-size: 1.05rem;
+`;

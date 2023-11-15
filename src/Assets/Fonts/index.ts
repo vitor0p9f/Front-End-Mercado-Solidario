@@ -15,6 +15,11 @@ export const ralewayMedium = Raleway({
   weight: "500",
 });
 
+export const ralewayRegular = Raleway({
+  subsets: ["latin"],
+  weight: "400",
+});
+
 export const latoRegular = Lato({
   weight: "400",
   subsets: ["latin"],

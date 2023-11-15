@@ -1,4 +1,3 @@
-import { SignInFormInputs } from "@/pages/Login";
 import { HTMLInputTypeAttribute } from "react";
 import { Path, RegisterOptions, UseFormRegister } from "react-hook-form";
 import { InputContainer, InputElement, Label, Span } from "./styles";
@@ -8,9 +7,9 @@ type ComponentProps = {
   $marginTop?: number;
   type: HTMLInputTypeAttribute;
   errorMessage: string | undefined;
-  RHFLabel: Path<SignInFormInputs>;
-  register: UseFormRegister<SignInFormInputs>;
-  registerOptions: RegisterOptions<SignInFormInputs>;
+  RHFLabel: Path<any>;
+  register: UseFormRegister<any>;
+  registerOptions: RegisterOptions;
   inputTestId?: string
   labelTestId?: string
   spanTestId?: string

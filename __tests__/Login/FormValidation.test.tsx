@@ -3,7 +3,7 @@ import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import 'jest-styled-components'
 import { render, screen } from 'test-utils'
-import { FormMock } from "../__mocks__/Form"
+import { FormMock } from "../../__mocks__/Form"
 import Cookies from "js-cookie"
 
 const mockLogin = jest.fn(authUser)

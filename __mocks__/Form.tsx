@@ -1,8 +1,8 @@
-import { InputComponent } from "@/Components/Input"
-import { Button, FieldsContainer, Form, Title } from "@/styles/pages/Login"
+import { InputComponent } from "../src/Components/Input"
+import { Button, FieldsContainer, Form, Title } from "../src/styles/pages/Login"
 import React from "react"
 import { RegisterOptions, useForm } from "react-hook-form"
-import { SignInFormInputs } from ".."
+import { SignInFormInputs } from "../src/pages/Login"
 
 type ComponentProps = {
     loginFunction: jest.Mock<Promise<void>, [email: string, password: string], any>

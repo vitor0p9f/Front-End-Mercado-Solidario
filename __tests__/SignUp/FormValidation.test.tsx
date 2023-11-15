@@ -2,7 +2,7 @@ import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import 'jest-styled-components'
 import { render, screen } from 'test-utils'
-import SignUp from '../page'
+import SignUp from '../../src/app/Sign-Up/page'
 
 beforeEach(async () => {
   render(<SignUp />)

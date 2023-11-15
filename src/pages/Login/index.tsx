@@ -13,6 +13,7 @@ import {
 import { authUser } from "@/utils/functions/authUser";
 import { RegisterOptions, useForm } from "react-hook-form";
 import { InputComponent } from "../../Components/Input";
+import Link from "next/link";
 
 export type SignInFormInputs = {
   Email: string;

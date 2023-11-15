@@ -1,8 +1,8 @@
-'use client'
-import { ThemeProvider } from "styled-components";
-import { Login } from "../pages/Login";
-import { GlobalStyle } from "../styles/global";
-import { defaultTheme } from "../styles/themes/default";
+"use client"
+import Login from "@/pages/Login"
+import { GlobalStyle } from "@/styles/global"
+import { defaultTheme } from "@/styles/themes/default"
+import { ThemeProvider } from "styled-components"
 
 export default function Home() {
   return (
@@ -11,4 +11,4 @@ export default function Home() {
       <Login />
     </ThemeProvider>
   )
-}
+}      

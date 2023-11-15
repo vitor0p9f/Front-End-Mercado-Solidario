@@ -14,7 +14,7 @@
   "dependencies": {
     "@ducanh2912/next-pwa": "^9.4.0",
     "autoprefixer": "10.4.15",
-    "axios": "^1.5.0",
+    "axios": "^1.6.0",
     "commitizen": "^4.3.0",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.13",

@@ -5,9 +5,12 @@ import {
   Button,
   FieldsContainer,
   Form,
-  Title,
-  Text
+  OptionsContainer,
+  Text,
+  TextContainer,
+  Title
 } from "@/styles/pages/Login";
+import { authUser } from "@/utils/functions/authUser";
 import { RegisterOptions, useForm } from "react-hook-form";
 import { InputComponent } from "../../Components/Input";
 import Link from "next/link";
@@ -35,7 +38,9 @@ export default function Login() {
     <PageContainer>
       <Logo size={7} />
 
-      <Form onSubmit={handleSubmit(() => console.log(isValid))}>
+      <Form onSubmit={
+        handleSubmit(formData => authUser(formData.Email, formData.Password))
+      }>
         <Title>Faça login na nossa plataforma</Title>
 
         <FieldsContainer>
@@ -75,10 +80,13 @@ export default function Login() {
 
         <Button>Entrar</Button>
       </Form>
-      <Text $marginTop={2}>Ainda não possui cadastro? <Link href='/Sign-Up' style={{
-        textDecoration: 'none',
-        color: "#54793E"
-      }}>Cadastre-se</Link></Text>
-    </PageContainer>
+
+      <OptionsContainer $marginTop={2}>
+        <TextContainer>
+          <Text $marginRight={0.25}>Ainda não possui cadastro?</Text>
+          <Text $highlight as="a" href="/Sign-Up">Cadastre-se</Text>
+        </TextContainer>
+      </OptionsContainer>
+    </PageContainer >
   );
 }

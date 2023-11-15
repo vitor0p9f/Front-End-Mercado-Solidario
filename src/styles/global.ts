@@ -34,13 +34,13 @@ export const PageContainer = styled.div`
 `;
 
 const sizes = {
-  mobile: '430px',
-  tablet: '768px',
-  laptop: '1024px',
+    mobile: '430px',
+    tablet: '768px',
+    laptop: '1024px',
 };
 
 export const devices = {
-  mobile: `(min-width: ${sizes.mobile})`,
-  tablet: `(min-width: ${sizes.tablet})`,
-  laptop: `(min-width: ${sizes.laptop})`,
+    mobile: `(min-width: ${sizes.mobile})`,
+    tablet: `(min-width: ${sizes.tablet})`,
+    laptop: `(min-width: ${sizes.laptop})`,
 };

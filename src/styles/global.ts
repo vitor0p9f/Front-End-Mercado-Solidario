@@ -13,26 +13,26 @@ export const devices = {
 };
 
 export const GlobalStyle = createGlobalStyle`
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
- }
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+     }
 
- :focus {
-    outline: 0;
-    box-shadow:0 0 0 2 ${props => props.theme['Highlight']}
-}
+     :focus {
+        outline: 0;
+        box-shadow:0 0 0 2 ${props => props.theme['Highlight']}
+    }
 
-body {
-    background-color: ${props => props.theme['Foreground']};
-    color: ${props => props.theme['black']};
-    -webkit-font-smoothing: antialiased;
-}
+    body {
+        background-color: ${props => props.theme['Foreground']};
+        color: ${props => props.theme['black']};
+        -webkit-font-smoothing: antialiased;
+    }
 
-body, input, textarea, button {
-    font: 400, 1rem Roboto, sans-serif;
-}
+    body, input, textarea, button {
+        font: 400, 1rem Roboto, sans-serif;
+    }
 `;
 
 type PageContainerProps = {
@@ -54,4 +54,13 @@ export const PageContainer = styled.div<PageContainerProps>`
         padding-left: ${props => (props.$horizontalPadding || 0)}rem;
         padding-right: ${props => (props.$horizontalPadding || 0)}rem;
      }
+`;
+
+export const MarketplacesCardsContainer = styled.div`
+    height: 32rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
 `;

@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 export const FairButtonsContainer = styled.div`
   display: flex;
   width: 100%;
-  height: 1.5rem;
+  height: 1.6rem;
   margin-top: 2rem;
 
   & button:nth-child(1){
@@ -27,8 +27,9 @@ export const Button = styled.button<Buttonprops>`
   color: #000000;
   height: 100%;
   width: 100%;
-  font-size: 14px;
+  font-size: 0.9rem;
   cursor: pointer;
+  padding: 0.5rem;
   background-color: ${({ $isActive, theme }) => $isActive ? theme.colors.highlight : theme.colors.foreground};
   border: none;
 `;

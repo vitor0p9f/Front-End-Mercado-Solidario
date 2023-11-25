@@ -5,24 +5,23 @@ export const NavigationBar = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: #F5F5F5;
-  color: #00000;
+  color: #000000;
   height: 40px;
   position: fixed;
   bottom: 0;
   width: 100%;
 
   .nav-item {
-    flex: 1;
-    text-align: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
 
     &:hover {
       background-color: #6C9C50;
-      height: 35px;
       transition: background-color 0.2s
     }
   }
 `;
-
-
-

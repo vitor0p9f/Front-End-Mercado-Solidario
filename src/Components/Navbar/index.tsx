@@ -6,18 +6,16 @@ export const BottomNavigation: React.FC = () => {
   return (
     <NavigationBar>
       <div className="nav-item">
-        <AiOutlineShop size={20} />
+        <AiOutlineShop size={24} />
       </div>
       <div className="nav-item" >
-        <AiOutlineShoppingCart size={20} />
+        <AiOutlineShoppingCart size={24} />
       </div>
       <div className="nav-item" >
-        <AiOutlineUser size={20} />
+        <AiOutlineUser size={24} />
       </div>
     </NavigationBar>
   );
 };
-
-
 
 

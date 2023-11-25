@@ -1,28 +1,34 @@
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 
-export const Button = styled.div`
+export const FairButtonsContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #F5F5F5;
-  color: #000000;
-  height: 24px;
-  border-radius: 8px;
   width: 100%;
-  margin-top: 25px;
-  font-size: 12px;
+  height: 1.5rem;
+  margin-top: 2rem;
 
-  .button-item {
-    flex: 1;
-    text-align: center;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #6C9C50;
-      border-radius: 8px;
-      height: 24px;
-      align-items: center;
-      transition: background-color 0.2s
-    }
+  & button:nth-child(1){
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
   }
+
+  & button:nth-child(2){
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+`;
+
+type Buttonprops = {
+  $isActive?: boolean;
+}
+export const Button = styled.button<Buttonprops>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: ${({ $isActive, theme }) => $isActive ? theme.colors.highlight : theme.colors.foreground};
+  border: none;
 `;

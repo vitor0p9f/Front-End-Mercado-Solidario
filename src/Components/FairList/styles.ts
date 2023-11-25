@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 
-export const Faircard = styled.div`
+type FaircardProps = {
+  $marginTop: number;
+}
+export const Faircard = styled.div<FaircardProps>`
   display: flex;
   align-items: center;
   height: 85px;
   width: 100%;
   background-color: #F5F5F5;
-  border-radius: 4px;
-  margin-top: 30px; 
+  border-radius: 0.25rem;
+  margin-top: ${({ $marginTop }) => $marginTop || 0}rem; 
 `;
 
 export const Image = styled.img`
@@ -39,4 +42,3 @@ export const Body = styled.h3`
 export const BoldText = styled.span`
   font-weight: 800; 
 `;
-

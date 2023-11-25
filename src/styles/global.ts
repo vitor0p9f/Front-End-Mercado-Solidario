@@ -57,10 +57,11 @@ export const PageContainer = styled.div<PageContainerProps>`
 `;
 
 export const MarketplacesCardsContainer = styled.div`
-    height: 32rem;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 2rem;
+    padding-bottom: 3.5rem;
     width: 100%;
+    overflow-y: scroll;
 `;

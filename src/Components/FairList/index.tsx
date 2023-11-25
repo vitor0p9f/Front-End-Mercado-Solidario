@@ -1,5 +1,6 @@
 import React from 'react';
-import { Faircard, Image,TextContainer, Title, Body, BoldText } from './styles'; // Importe os estilos e componentes necessários
+import { Faircard, Image, TextContainer, Title, Body, BoldText } from './styles'; // Importe os estilos e componentes necessários
+import { MarketplacesCardsContainer } from '@/styles/global';
 
 const feiras = [
   {
@@ -19,45 +20,41 @@ const feiras = [
 ];
 
 interface FairProps {
-    feira: {
-      id: number;
-      nome: string;
-      taxaEntrega: string;
-      distancia: string;
-      imagem: string;
-    };
-  }
-
-  const Fair: React.FC<FairProps> = ({ feira }) => {
-    return (
-      <Faircard>
-        <Image src={feira.imagem} alt={`Imagem da ${feira.nome}`} />
-        <TextContainer>
-          <Title>{feira.nome}</Title>
-          <Body>
-            <BoldText>Taxa de entrega:</BoldText> {feira.taxaEntrega}
-          </Body>
-          <Body>
-            <BoldText>Distância:</BoldText> {feira.distancia}
-          </Body>
-        </TextContainer>
-      </Faircard>
-    );
+  feira: {
+    id: number;
+    nome: string;
+    taxaEntrega: string;
+    distancia: string;
+    imagem: string;
   };
-  
-  export const FairList = () => {
-    return (
-      <div>
-        {feiras.map((feira, index) => (
-          <React.Fragment key={feira.id}>
-            <Fair feira={feira} />
-            {index < feiras.length - 1 && <div style={{ marginTop: '10px' }} />}
-          </React.Fragment>
-        ))}
-      </div>
-    );
-  };
+  marginTop: number;
+}
 
+const Fair: React.FC<FairProps> = ({ feira, marginTop }) => {
+  return (
+    <Faircard $marginTop={marginTop}>
+      <Image src={feira.imagem} alt={`Imagem da ${feira.nome}`} />
+      <TextContainer>
+        <Title>{feira.nome}</Title>
+        <Body>
+          <BoldText>Taxa de entrega:</BoldText> {feira.taxaEntrega}
+        </Body>
+        <Body>
+          <BoldText>Distância:</BoldText> {feira.distancia}
+        </Body>
+      </TextContainer>
+    </Faircard>
+  );
+};
 
-  
- 
+export const FairList = () => {
+  return (
+    <MarketplacesCardsContainer>
+      {feiras.map((feira, index) => (
+        <React.Fragment key={feira.id}>
+          <Fair feira={feira} marginTop={index != 0 ? 1 : 0} />
+        </React.Fragment>
+      ))}
+    </MarketplacesCardsContainer>
+  );
+};
